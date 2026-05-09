@@ -1,0 +1,391 @@
+/*Geral*/
+body {
+    margin: 0;
+    padding: 0;
+    color: white;
+    background-color: #3a3939; /* Cinza escuro para destacar o conteúdo */
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+/*Navbar*/
+header {
+    border-bottom: 2px solid rgba(212, 175, 55, 0.3);
+    padding: 20px 50px;
+    background: rgba(18, 18, 18, 0.8); /* Fundo semi-transparente */
+    backdrop-filter: blur(15px);
+    position: fixed;
+    width: 100%;
+    z-index: 1000; 
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+nav a:hover {
+    color: #ffc400; /* Cor de destaque ao passar o mouse */ 
+}
+
+.logo, .logo a {
+    font-weight: bold;
+    letter-spacing: -2px; /* O logo tem letras bem próximas */
+    background: linear-gradient(to bottom, #E0E0E0 50%, #B0B0B0 100%); /* Efeito prata */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: rgb(0, 0, 0);
+    font-family: 'Michroma', sans-serif;
+    text-transform: uppercase;
+    font-size: 2.5rem;
+}
+
+.t-ouro {
+    background: linear-gradient(to bottom, #D4AF37 50%, #FFA500 100%); /* Efeito ouro */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: rgb(0, 0, 0);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-weight: 600;
+    font-size: 1.0rem;
+    transition: 0.3s;
+}
+
+/*MENU RESPONSIVO*/
+.mobile-menu div {
+  width: 32px;
+  height: 2px;
+  background: #D4AF37; /* Cor Ouro da OBRALYX */
+  margin: 8px;
+  padding: 0.7px;
+  transition: 0.3s;
+}
+
+.mobile-menu {
+    display: none;
+    position: relative;
+    height: 40px;
+    min-width: 17%;
+    cursor: pointer;
+    z-index: 1001; /* Garante que fique acima do menu */
+}
+
+  @media (max-width: 1315px) {
+    header {
+        padding: 20px 20px;
+    }
+
+    nav {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+
+    body {
+      overflow-x: hidden;
+    }
+
+    .nav-list {
+        position: fixed; /* Mude de absolute para fixed */
+        top: 0;
+        right: 0;
+        width: clamp(240px, 30vw, 300px); /* mais estreito sem encolher demais */
+        height: 100vh;
+        background: rgba(18, 18, 18, 0.96);
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 6px;
+        padding-top: 70px;
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in;
+        z-index: 998; /* Fica abaixo do botão mobile-menu */
+    }
+
+    .nav-list li {
+      margin-left: 0;
+      opacity: 0;
+      width: 100%;
+      min-height: 72px;
+      border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+    }
+
+    .nav-list li a {
+      display: block;
+      width: 100%;
+      padding: 22px 16px;
+      font-size: 1.3rem;
+      text-align: center;
+      box-sizing: border-box;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    .nav-list li a:hover {
+      background: rgba(212, 175, 55, 0.1);
+      color: #ffc400;
+    }
+
+    .mobile-menu {
+        display: block;
+    }
+
+  }
+
+  .nav-list.active {
+    transform: translateX(0);
+  }
+
+  @keyframes navLinkFade {
+    from {
+      opacity: 0;
+      transform: translateX(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  .mobile-menu.active .line1 {
+    transform: rotate(-45deg) translate(-8px, 8px);
+  }
+
+  .mobile-menu.active .line2 {
+    opacity: 0;
+  }
+
+  .mobile-menu.active .line3 {
+    transform: rotate(45deg) translate(-5px, -7px);
+  }
+
+
+/* Seção Hero */
+.hero {
+    height: 100 vertical height;
+    min-height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), 
+                url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=1931&auto=format&fit=crop'); /* Substitua pela foto da sua melhor obra */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.hero-content h1 {
+    font-family:'Inter', sans-serif;
+    font-size: 3.5rem;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    max-width: 900px;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    color: #d3d3d3;
+    margin-bottom: 40px;
+    letter-spacing: 1px;
+}
+
+/*Section2*/
+.proj-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 80px auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.proj-container.left {
+    flex-direction: row-reverse;
+}
+
+.proj-container.right {
+    flex-direction: row;
+}
+
+.pai {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    padding-top: 140px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.proj {
+    flex: 1 1 55%;
+    display: flex;
+    justify-content: center;
+}
+
+.proj img {
+    width: 100%;
+    max-width: 650px;
+    height: auto;
+    display: block;
+    border-radius: 16px;
+}
+
+.info-projeto {
+    flex: 1 1 40%;
+    width: 100%;
+    text-align: left;
+    margin-top: 0;
+}
+
+.info-projeto h3 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #fff;
+    line-height: 1.3;
+    letter-spacing: 0.5px;
+    margin-bottom: 16px;
+}
+
+.info-projeto p {
+    font-size: 1rem;
+    color: #dcdcdc;
+    line-height: 1.8;
+    margin: 0;
+}
+
+aside {
+    width: 100%;
+}
+
+@media (max-width: 980px) {
+    .proj-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .proj-container.left,
+    .proj-container.right {
+        flex-direction: column;
+    }
+
+    .info-projeto {
+        text-align: center;
+    }
+}
+
+@media (max-width: 680px) {
+    .proj {
+        order: 0;
+    }
+
+    .proj img {
+        max-width: 100%;
+    }
+
+    .info-projeto h3 {
+        font-size: 1.4rem;
+    }
+
+    .info-projeto p {
+        font-size: 0.95rem;
+    }
+}
+
+
+/*RODAPÉ*/
+
+footer {
+    background-color: #000000; /* Um pouco mais escuro que o body */
+    padding: 60px 20px 20px;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    padding-bottom: 40px;
+}
+
+.footer-brand .logo {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+.footer-brand p {
+    color: #888;
+    line-height: 1.6;
+    font-size: 0.9rem;
+}
+
+.footer-links h3, .footer-contact h3 {
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    color: #D4AF37;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links ul li {
+    margin-bottom: 10px;
+}
+
+.footer-links ul li a {
+    color: #888;
+    transition: 0.3s;
+    font-size: 0.9rem;
+}
+
+.footer-links ul li a:hover {
+    color: #D4AF37;
+    padding-left: 5px;
+}
+
+.footer-contact p {
+    color: #888;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding-top: 20px;
+    text-align: center;
+}
+
+.footer-bottom p {
+    color: #555;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+}

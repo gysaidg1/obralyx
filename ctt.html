@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+     <link href="https://fonts.googleapis.com/css2?family=Michroma&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Estilos/ctt.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OBRALYX</title>
+</head>
+<body>
+    <header>
+        <nav>
+        <div class="logo"><a href="index.html">OBRA<span class="t-ouro">LYX</span></a>
+            </div>
+           <div class="mobile-menu">
+         <div class="line1"></div>
+          <div class="line2"></div>
+          <div class="line3"></div>
+        </div>
+            <ul class="nav-list">
+                <li><a href="index.html">INICIO</a></li>
+                <li><a href="sobre.html">SOBRE</a></li>
+                <li><a href="projetos.html">PROJETOS</a></li>
+              <!--  <li><a href="novidades.html">NOVIDADES</a></li>-->
+                <li><a href="ctt.html">CONTATO</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="principal" class="sec-principal">
+    <div class="pai">
+        
+        <div class="filho">
+            <!--TEXTO CHAMATIVO-->
+            <span class="subtitle">ENTRE EM CONTATO</span>
+            <h2 class="michroma-font">VAMOS CONSTRUIR <br> SEU PRÓXIMO <span class="t-ouro">LEGADO</span></h2>
+            <p class="contact-description">Agende uma consultoria técnica para o seu projeto.</p>
+           <!-- FORMULÁRIO DE CONTATO -->
+            <div class="contact-form-box">
+            <form action="http://localhost:3000/enviar-contato" method="POST">
+                <div class="field">
+                    <label>NOME COMPLETO</label>
+                    <input type="text" name="nome" placeholder="Seu nome completo">
+                </div>
+                <div class="field">
+                    <label>E-MAIL</label>
+                    <input type="email" name="email" placeholder="seu@email.com">
+                </div>
+                <div class="field">
+                    <label>MENSAGEM</label>
+                    <textarea rows="4" name="mensagem" placeholder="Descreva brevemente seu projeto..."></textarea>
+                </div>
+                <button type="submit" class="btn-primary-full">ENVIAR PROPOSTA</button>
+            </form>
+        </div>
+       <!--OPÇÕES DE CONTATO-->
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <span class="icon">📍</span>
+                    <div>
+                        <strong>LOCALIZAÇÃO</strong>
+                        <p>Av. Principal, 1000, Sala 502 - Rio de Janeiro</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <span class="icon">📞</span>
+                    <div>
+                        <strong>TELEFONE</strong>
+                        <p>(21) 96427-1989</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<footer>
+    <div class="footer-container">
+        <div class="footer-brand">
+            <div class="logo"><a href="index.html">OBRA<span class="t-ouro">LYX</span></a></div>
+            <p>Excelência em engenharia e construção civil. Transformando projetos em realidade com precisão e luxo.</p>
+        </div>
+
+        <div class="footer-links">
+            <h3>Navegação</h3>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="#">Projetos</a></li>
+                <li><a href="#">Contato</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-contact">
+            <h3>Contato</h3>
+            <p>📍 Av. Principal, 1000 - Centro</p>
+            <p>📞 (21) 96427-1989</p>
+            <p>✉️ contato@obralyx.com.br</p>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>&copy; 2026 OBRALYX CONSTRUÇÕES - Todos os direitos reservados.</p>
+    </div>
+</footer>
+<script src="navbar.js"></script>
+<script src="server.js"></script>
+</body>
+</html>
