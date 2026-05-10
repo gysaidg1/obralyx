@@ -8,6 +8,10 @@ body {
     overflow-x: hidden;
 }
 
+main {
+    padding-top: 90px;
+}
+
 a {
     text-decoration: none;
     color: white;
@@ -331,5 +335,44 @@ footer {
     letter-spacing: 1px;
 }
 
+@media (max-width: 980px) {
+    .cont-sec {
+        padding-top: 120px;
+    }
 
+    .boxs {
+        flex-direction: column;
+        text-align: center;
+    }
 
+    .icon {
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 680px) {
+    header {
+        padding: 16px 16px;
+    }
+
+    .logo {
+        font-size: 2rem;
+    }
+
+    .nav-list li a {
+        font-size: 1.1rem;
+    }
+
+    .cont-sec {
+        padding-top: 100px;
+    }
+
+    .titulo {
+        font-size: 1.9rem;
+    }
+
+    .boxs {
+        gap: 15px;
+        padding: 18px;
+    }
+}
