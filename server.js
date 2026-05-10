@@ -3,6 +3,7 @@ const mysql = require('mysql2');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const nodemailer = require('nodemailer');
+require('dotenv').config();
 
 const app = express();
 
@@ -31,8 +32,8 @@ db.connect((err) => {
 const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-        user: 'gyovannasg628@gmail.com',
-        pass: 'xqna pwvl fzvi arya' 
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS
     }
 });
 
@@ -52,8 +53,8 @@ app.post('/enviar-contato', (req, res) => {
 
         // Configuração do e-mail com os dados recebidos
         const mailOptions = {
-            from: 'seu-email@gmail.com',
-            to: 'gyovannasg628@gmail.com', // Mude para o e-mail do seu pai se quiser testar o recebimento dele
+            from: process.env.EMAIL_USER,
+            to: process.env.EMAIL_USER, // Mude para o e-mail do seu pai se quiser testar o recebimento dele
             subject: '🚨 Novo Orçamento - Site OBRALYX',
             html: `
                 <div style="font-family: sans-serif; color: #333;">
